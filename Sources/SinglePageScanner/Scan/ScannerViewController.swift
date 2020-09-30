@@ -89,6 +89,7 @@ final class ScannerViewController: UIViewController {
         
         captureSessionManager = CaptureSessionManager(videoPreviewLayer: videoPreviewLayer, delegate: self)
         
+        
         originalBarStyle = navigationController?.navigationBar.barStyle
         
         NotificationCenter.default.addObserver(self, selector: #selector(subjectAreaDidChange), name: Notification.Name.AVCaptureDeviceSubjectAreaDidChange, object: nil)
