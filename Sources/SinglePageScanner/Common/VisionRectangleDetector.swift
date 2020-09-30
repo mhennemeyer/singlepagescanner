@@ -35,12 +35,12 @@ enum VisionRectangleDetector {
                 completion(biggest.applying(transform))
             })
 
-            rectDetectRequest.minimumConfidence = 0.7
             rectDetectRequest.maximumObservations = 15
             
             // FIXME: Inject values from Outside
-            rectDetectRequest.minimumAspectRatio = 0.6
-            rectDetectRequest.maximumAspectRatio = 0.8
+            rectDetectRequest.minimumConfidence = 0.5
+            rectDetectRequest.minimumAspectRatio = 0.65
+            rectDetectRequest.maximumAspectRatio = 0.75
 
             return rectDetectRequest
         }()
