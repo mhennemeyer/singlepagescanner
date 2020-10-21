@@ -24,11 +24,11 @@ enum VisionRectangleDetector {
                     return
                 }
                 
-                results.forEach { result in
-                    print("VNDetectRectanglesRequest quad: \(Quadrilateral(rectangleObservation: result))\nratio: \(Quadrilateral(rectangleObservation: result).ratio) \nconfidence: \(result.confidence)")
-                    
-                    
-                }
+//                results.forEach { result in
+//                    print("VNDetectRectanglesRequest quad: \(Quadrilateral(rectangleObservation: result))\nratio: \(Quadrilateral(rectangleObservation: result).ratio) \nconfidence: \(result.confidence)")
+//
+//
+//                }
 
                 let quads: [Quadrilateral] = results.map(Quadrilateral.init)
 
@@ -44,9 +44,8 @@ enum VisionRectangleDetector {
             })
 
             rectDetectRequest.maximumObservations = 15
-            
-            // FIXME: Inject values from Outside
             rectDetectRequest.minimumConfidence = 0.5
+            // FIXME: Inject values from Outside
             rectDetectRequest.minimumAspectRatio = 0.65
             rectDetectRequest.maximumAspectRatio = 0.75
 
