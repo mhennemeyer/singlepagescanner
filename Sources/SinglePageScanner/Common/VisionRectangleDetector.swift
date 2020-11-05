@@ -17,7 +17,6 @@ enum VisionRectangleDetector {
         // Create the rectangle request, and, if found, return the biggest rectangle (else return nothing).
         let rectangleDetectionRequest: VNDetectRectanglesRequest = {
             let rectDetectRequest = VNDetectRectanglesRequest(completionHandler: { (request, error) in
-                print("VNDetectRectanglesRequest error: \(error)")
                 
                 guard error == nil, let results = request.results as? [VNRectangleObservation], !results.isEmpty else {
                     completion(nil)
